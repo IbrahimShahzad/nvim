@@ -31,6 +31,17 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Obsidian Key maps
+vim.keymap.set('n', '<leader>onn', '<cmd>ObsidianNew<CR>', { desc = 'Create [O]bsidian [N]ew [N]ote' })
+vim.keymap.set('n', '<leader>ont', '<cmd>ObsidianNewFromTemplate<CR>', { desc = 'Create [O]bsidian [N]ew note from [T]emplate' })
+vim.keymap.set('n', '<leader>onl', '<cmd>ObsidianLinkNew<CR>', { desc = 'Create [O]bsidian [N]ew [L]ink from visual selection' })
+vim.keymap.set('n', '<leader>orn', '<cmd>ObsidianRename<CR>', { desc = '[O]bsidian [R]ename [N]ote' })
+vim.keymap.set('n', '<leader>ow', '<cmd>ObsidianWorkspace<CR>', { desc = 'Choose [O]bsidian [W]orskspace' })
+vim.keymap.set('n', '<leader>opi', '<cmd>ObsidianPasteImg<CR>', { desc = '[O]bsidian [P]aste [I]mage' })
+vim.keymap.set('n', '<leader>oo', '<cmd>ObsidianOpen<CR>', { desc = '[O]bsidian [O]pen App' })
+vim.keymap.set('n', '<leader>sog', '<cmd>ObsidianSearch<CR>', { desc = '[S]earch [O]bsidian note [G]rep' })
+vim.keymap.set('n', '<leader>sot', '<cmd>ObsidianTags<CR>', { desc = '[S]earch [O]bsidotan [T]ags' })
+vim.keymap.set('n', '<leader>sol', '<cmd>ObsidianLinks<CR>', { desc = '[S]earch [O]bsidian [L]inks' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

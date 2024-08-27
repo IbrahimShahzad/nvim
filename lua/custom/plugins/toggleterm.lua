@@ -15,8 +15,8 @@ return {
           -- not natively supported but implemented in this plugin.
           border = 'curved',
           -- like `size`, width, height, row, and col can be a number or function which is passed the current terminal
-          width = 80,
-          height = 30,
+          width = 140,
+          height = 40,
           winblend = 3,
           title_pos = 'center',
         },
