@@ -42,6 +42,9 @@ vim.keymap.set('n', '<leader>oo', '<cmd>ObsidianOpen<CR>', { desc = '[O]bsidian 
 vim.keymap.set('n', '<leader>sog', '<cmd>ObsidianSearch<CR>', { desc = '[S]earch [O]bsidian note [G]rep' })
 vim.keymap.set('n', '<leader>sot', '<cmd>ObsidianTags<CR>', { desc = '[S]earch [O]bsidotan [T]ags' })
 vim.keymap.set('n', '<leader>sol', '<cmd>ObsidianLinks<CR>', { desc = '[S]earch [O]bsidian [L]inks' })
+
+-- Tabs
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[S]earch [O]bsidian [L]inks' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
