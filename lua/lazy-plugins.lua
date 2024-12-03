@@ -86,5 +86,6 @@ require('lazy').setup({
     },
   },
 })
+-- require 'kickstart.plugins.load_test_lsp'
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -1,0 +1,22 @@
+-- local client = vim.lsp.start_client {
+--   cmd = { '/Users/ibrahim.shahzad/.local/bin/KamaiZen' }, -- update this path
+--   name = 'KamaiZen',
+--   settings = {
+--     kamaizen = {
+--       logLevel = 1,
+--       kamailioSourcePath = '/Users/ibrahim.shahzad/office/bitbucket/kamailio_ims/src',
+--     },
+--   },
+-- }
+--
+-- if not client then
+--   vim.notify('Failed to start LSP client', vim.log.levels.ERROR)
+--   return
+-- end
+--
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'kamailio',
+--   callback = function()
+--     vim.lsp.buf_attach_client(0, client)
+--   end,
+-- })
