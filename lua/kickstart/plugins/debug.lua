@@ -16,6 +16,7 @@ return {
 
     -- Required dependency for nvim-dap-ui
     'nvim-neotest/nvim-nio',
+    'theHamsta/nvim-dap-virtual-text',
 
     -- Installs the debug adapters for you
     'williamboman/mason.nvim',
@@ -49,6 +50,13 @@ return {
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
+
+    require('nvim-dap-virtual-text').setup {
+      -- Show virtual text for current frame
+      show_current_frame = true,
+      -- Show virtual text for current stack
+      show_stack_frame = true,
+    }
 
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
@@ -95,10 +103,19 @@ return {
 
     -- Install golang specific config
     require('dap-go').setup {
+      dap_configurations = {
+        {
+          -- Must be "go" or it will be ignored by the plugin
+          type = 'go',
+          name = 'Attach remote',
+          mode = 'remote',
+          request = 'attach',
+        },
+      },
       delve = {
         -- On Windows delve must be run attached or it crashes.
         -- See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
-        detached = vim.fn.has 'win32' == 0,
+        -- detached = vim.fn.has 'win32' == 0,
       },
     }
   end,
