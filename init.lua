@@ -106,47 +106,47 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
----@class parser_config
-local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-parser_config.kamailio_cfg = {
-  install_info = {
-    -- url = 'https://github.com/IbrahimShahzad/tree-sitter-kamailio-cfg', -- local path or git repo
-    url = '~/personal/tree-sitter-kamailio-cfg', -- local path or git repo
-    files = { 'src/parser.c' }, -- note that some parsers also require src/scanner.c or src/scanner.cc
-    -- optional entries:
-    -- branch = 'main', -- default branch in case of git repo if different from master
-    -- branch = 'v0.1.0', -- default branch in case of git repo if different from master
-    branch = 'v0.1.2', -- default branch in case of git repo if different from master
-    generate_requires_npm = false, -- if stand-alone parser without npm dependencies
-    requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
-  },
-  filetype = 'kamailio', -- if filetype does not match the parser name
-}
-vim.treesitter.language.register('kamailio_cfg', 'cfg')
-
-local client = vim.lsp.start_client {
-  cmd = { '/Users/ibrahim.shahzad/personal/KamaiZen/KamaiZen' }, -- update this path
-  name = 'KamaiZen',
-  settings = {
-    kamaizen = {
-      logLevel = 1,
-      kamailioSourcePath = '/Users/ibrahim.shahzad/office/bitbucket/kamailio_ims/',
-      enableDeprecatedCommentHint = false,
-    },
-  },
-}
-
-if not client then
-  vim.notify('Failed to start LSP client', vim.log.levels.ERROR)
-  return
-end
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'kamailio',
-  callback = function()
-    vim.lsp.buf_attach_client(0, client)
-  end,
-})
+-- ---@class parser_config
+-- local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+-- parser_config.kamailio_cfg = {
+--   install_info = {
+--     -- url = 'https://github.com/IbrahimShahzad/tree-sitter-kamailio-cfg', -- local path or git repo
+--     url = '~/personal/tree-sitter-kamailio-cfg', -- local path or git repo
+--     files = { 'src/parser.c' }, -- note that some parsers also require src/scanner.c or src/scanner.cc
+--     -- optional entries:
+--     -- branch = 'main', -- default branch in case of git repo if different from master
+--     -- branch = 'v0.1.0', -- default branch in case of git repo if different from master
+--     branch = 'v0.1.2', -- default branch in case of git repo if different from master
+--     generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+--     requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
+--   },
+--   filetype = 'kamailio', -- if filetype does not match the parser name
+-- }
+-- vim.treesitter.language.register('kamailio_cfg', 'cfg')
+--
+-- local client = vim.lsp.start_client {
+--   cmd = { '/Users/ibrahim.shahzad/personal/KamaiZen/KamaiZen' }, -- update this path
+--   name = 'KamaiZen',
+--   settings = {
+--     kamaizen = {
+--       logLevel = 1,
+--       kamailioSourcePath = '/Users/ibrahim.shahzad/office/bitbucket/kamailio_ims/',
+--       enableDeprecatedCommentHint = false,
+--     },
+--   },
+-- }
+--
+-- if not client then
+--   vim.notify('Failed to start LSP client', vim.log.levels.ERROR)
+--   return
+-- end
+--
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'kamailio',
+--   callback = function()
+--     vim.lsp.buf_attach_client(0, client)
+--   end,
+-- })
 -- local client = vim.lsp.start_client {
 --   name = 'KamaiZen',
 --   cmd = { '/Users/ibrahim.shahzad/personal/KamaiZen/KamaiZen' },
