@@ -106,22 +106,22 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
--- ---@class parser_config
--- local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
--- parser_config.kamailio_cfg = {
---   install_info = {
---     -- url = 'https://github.com/IbrahimShahzad/tree-sitter-kamailio-cfg', -- local path or git repo
---     url = '~/personal/tree-sitter-kamailio-cfg', -- local path or git repo
---     files = { 'src/parser.c' }, -- note that some parsers also require src/scanner.c or src/scanner.cc
---     -- optional entries:
---     -- branch = 'main', -- default branch in case of git repo if different from master
---     -- branch = 'v0.1.0', -- default branch in case of git repo if different from master
---     branch = 'v0.1.2', -- default branch in case of git repo if different from master
---     generate_requires_npm = false, -- if stand-alone parser without npm dependencies
---     requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
---   },
---   filetype = 'kamailio', -- if filetype does not match the parser name
--- }
+---@class parser_config
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+parser_config.kamailio_cfg = {
+  install_info = {
+    -- url = 'https://github.com/IbrahimShahzad/tree-sitter-kamailio-cfg', -- local path or git repo
+    url = '~/personal/tree-sitter-kamailio-cfg', -- local path or git repo
+    files = { 'src/parser.c' }, -- note that some parsers also require src/scanner.c or src/scanner.cc
+    -- optional entries:
+    -- branch = 'main', -- default branch in case of git repo if different from master
+    -- branch = 'v0.1.0', -- default branch in case of git repo if different from master
+    branch = 'v0.1.2', -- default branch in case of git repo if different from master
+    generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+    requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
+  },
+  filetype = 'kamailio', -- if filetype does not match the parser name
+}
 -- vim.treesitter.language.register('kamailio_cfg', 'cfg')
 --
 -- local client = vim.lsp.start_client {
