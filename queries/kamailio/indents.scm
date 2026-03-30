@@ -1,5 +1,5 @@
-[ "{" "(" "[" ] @indent.begin
-[ "}" ")" "]" ] @indent.end
+; [ "{" "(" "[" ] @indent.begin
+; [ "}" ")" "]" ] @indent.end
 ;(switch_statement
 ;  body: (compound_statement "}" @match)
 ;  (#set! indent.matchIndentOf parent.startPosition))

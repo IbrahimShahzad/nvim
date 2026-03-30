@@ -1,3 +1,4 @@
+-- return {}
 -- return {
 --   'IbrahimShahzad/KamaiZen',
 --   branch = 'master', -- or branch = 'master'
@@ -15,17 +16,16 @@
 -- }
 return {
   'IbrahimShahzad/KamaiZen',
-  branch = 'major-refactor',
+  branch = 'without_formater',
   -- or
-  --version = 'v0.1.2',
+  -- version = 'V0.1.2',
   build = 'go build',
   opts = {
     settings = {
       kamaizen = {
         enableDeprecatedCommentHint = false, -- to enable hints for '#' comments
-        enableDiagnostics = true, -- to enable/disable diagnostics
-        -- KamailioSourcePath = '/path/to/kamailio', -- or use current dir vim.fn.getcwd()
-        KamailioSourcePath = '/Users/ibrahim.shahzad/office/kamailio_ims/',
+        enableDiagnostics = false, -- to enable/disable diagnostics
+        KamailioSourcePath = '/Users/ibrahim/office/bitbucket/kamailio_ims/', -- or use current dir vim.fn.getcwd()
         loglevel = 3,
       },
     },
@@ -37,10 +37,10 @@ return {
           vim.keymap.set(mode, keys, func, { buffer = bufnr, noremap = true, silent = true, desc = 'LSP: ' .. desc })
         end
         -- Diagnostic keymaps
-        bufkeymap('n', ']d', vim.diagnostic.jump { count = 1, float = true }, 'Go to next [D]iagnostic message')
-        bufkeymap('n', '[d', vim.diagnostic.jump { count = -1, float = true }, 'Go to previous [D]iagnostic message')
-        bufkeymap('n', 'e', vim.diagnostic.open_float, 'Show diagnostic [E]rror messages')
-        bufkeymap('n', 'q', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')
+        -- bufkeymap('n', '[d', vim.diagnostic.jump { count = -1, float = true }, 'Go to previous [D]iagnostic message')
+        -- bufkeymap('n', ']d', vim.diagnostic.jump { count = 1, float = true }, 'Go to next [D]iagnostic message')
+        -- bufkeymap('n', 'e', vim.diagnostic.open_float, 'Show diagnostic [E]rror messages')
+        -- bufkeymap('n', 'q', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')
         --
         if client.server_capabilities.hoverProvider then
           bufkeymap('n', 'K', vim.lsp.buf.hover, 'Hover Documentation')

@@ -110,8 +110,8 @@ require 'lazy-plugins'
 local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 parser_config.kamailio_cfg = {
   install_info = {
-    -- url = 'https://github.com/IbrahimShahzad/tree-sitter-kamailio-cfg', -- local path or git repo
-    url = '~/personal/tree-sitter-kamailio-cfg', -- local path or git repo
+    url = 'https://github.com/IbrahimShahzad/tree-sitter-kamailio-cfg', -- local path or git repo
+    -- url = '~/personal/tree-sitter-kamailio-cfg', -- local path or git repo
     files = { 'src/parser.c' }, -- note that some parsers also require src/scanner.c or src/scanner.cc
     -- optional entries:
     -- branch = 'main', -- default branch in case of git repo if different from master
@@ -122,6 +122,14 @@ parser_config.kamailio_cfg = {
   },
   filetype = 'kamailio', -- if filetype does not match the parser name
 }
+--
+-- vim.opt.listchars = {
+--   eol = '$',
+--   space = ' ',
+--   tab = '↣',
+--   trail = '×',
+-- }
+vim.opt.list = true
 -- vim.treesitter.language.register('kamailio_cfg', 'cfg')
 --
 -- local client = vim.lsp.start_client {
@@ -165,3 +173,4 @@ parser_config.kamailio_cfg = {
 -- })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+-- vim.cmd 'colorscheme carbonfox'

@@ -32,8 +32,8 @@
   name: (pvar_argument) @variable.parameter)
 (avp_var
   name: (pvar_argument) @variable.parameter)
-(dlg_var
-  name: (pvar_argument) @variable.parameter)
+; (dlg_var
+;   name: (pvar_argument) @variable.parameter)
 (pvar_expression
   "$" @keyword.operator
   var: (pseudo_content) @attribute.builtin)
@@ -108,6 +108,7 @@
 
 "." @punctuation.delimiter
 "," @punctuation.delimiter
+";" @punctuation.delimiter
 ":" @punctuation.delimiter
 "::" @character.special
 
@@ -127,6 +128,3 @@
    "else"
    "default"
    "case" ] @keyword.conditional
-
-[ "{" "(" "[" ] @indent
-[ "}" ")" "]" ] @dedent
